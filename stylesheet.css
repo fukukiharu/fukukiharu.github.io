@@ -1,4 +1,139 @@
-<head>
-    .title {
-    color: #02ccba;
-  }
+/* Variables */
+:root{
+    --Dark-cyan: hsl(158, 36%, 37%);
+    --Cream: hsl(30, 38%, 92%);
+    --Very-dark-blue: hsl(212, 21%, 14%);
+    --Dark-grayish-blue: hsl(228, 12%, 48%);
+    --White: hsl(0, 0%, 100%);
+}
+
+/* Global Styles */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--Cream);
+}
+img{
+    width: 100%;
+    height: 100%;
+    /* so img does not go outside window */
+}
+
+/* Main */
+.container{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--White);
+    border-radius: .5rem;
+    margin: 10rem auto;
+    height: auto;
+    width: 40rem;
+    overflow: hidden;
+}
+
+#image1{
+    display: block; /* show when desktop view*/
+    width: 50%;
+    object-fit: cover;
+}
+#image2{
+    display: none; /* hide when desktop view*/
+}
+
+.about{
+    display: block;
+    align-items: center;
+    padding: 2rem;
+    margin: auto;
+}
+
+.about .subheading{
+    color: var(--Dark-grayish-blue);
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: .5em;
+}
+
+.about .heading{
+    color: var(--Very-dark-blue);
+    font-family: "Fraunces", serif;
+    padding: 1rem 0;
+}
+
+.about .description{
+    color:var(--Dark-grayish-blue);
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.about .price{
+    padding: 1rem 0px;
+    display: flex;
+    align-items: center;
+}
+
+.about .price .discount{
+    color: hsl(158, 36%, 37%);
+    font-family: "Fraunces", serif;
+}
+
+.about .original{
+    color: hsl(228, 12%, 48%);
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    padding-left: 1rem;
+}
+
+.about button{
+    display: block;
+    align-items: center;
+    margin: 1rem auto;
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(158, 36%, 37%);
+    font-size: 7px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: .5rem;
+    border: none;
+    padding: .7rem;
+    width: 90%;
+}
+.about button .cart{
+    height: .6rem;
+    width:auto;
+    padding-right: .5rem;
+}
+button:hover{
+    cursor: pointer;
+    background-color: hsl(158, 36%, 25%);
+}
+
+@media screen and (max-width: 481px){
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--White);
+        border-radius: .5rem;
+        max-width: 22rem;
+        margin: 2rem auto;
+        height: auto;
+        width: 95%;
+        overflow: hidden;
+    }
+    #image1{
+        display: none; /* hide when desktop view*/
+    }   
+    #image2{
+        display: block; /* show when mobile view*/
+        width: 100%;
+        object-fit: cover;
+    }
+}
